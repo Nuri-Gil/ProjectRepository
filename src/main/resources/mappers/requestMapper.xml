@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Mapping 설정은 root-context 에서 mybatis property 추가할 것-->
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.soomgo.soomgo_project.mappers.RequestMapper">
+    <insert id="insert">
+        <selectKey order="AFTER" keyProperty="req_id" resultType="int"> <!-- 이 안에 어떤 SQL 문이 들어갈 것인가 -->
+            <!-- MySQL 에는 LastInsertId 가 있음 -> 방금전에 들어간 AutoIncrement 된 값이 나옴 (Long 타입으로 받아다 쓸 목적)
+            order AFTER -> SQL 문 수행 이후, keyProperty -> 값을 어디에 세팅할 것인가 -->
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        <!-- SQL 문 안에 실제 내용물이 들어가는 부분은 # 으로 처리, 나머지는 GETTER
+        동작 시에 #{} 값이 ? 로 받게 되어 변수로 바뀜 -->
+        insert into request_newbie (req_id, req_newbie, req_regDate, req_sort, req_type, req_sub, req_file1, req_file2, req_cr, req_amount, req_addService, req_result, req_day, req_time, req_age, req_sex, req_fav, req_place, req_date, req_region, req_ref)
+        values (#{req_id}, #{req_newbie}, #{req_regDate}, #{req_sort}, #{req_type}, #{req_sub}, #{req_file1}, #{req_file2}, #{req_cr}, #{req_amount}, #{req_addService}, #{req_result}, #{req_day}, #{req_time}, #{req_age}, #{req_sex}, #{req_fav}, #{req_place}, #{req_date}, #{req_region}, #{req_ref})
+    </insert>
+</mapper>
