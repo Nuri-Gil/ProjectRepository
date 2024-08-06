@@ -1,5 +1,7 @@
 package sample;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.util.JSONPObject;
 import lombok.extern.log4j.Log4j2;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -9,7 +11,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 
 @ExtendWith(SpringExtension.class)
 @ContextConfiguration("file:src/main/webapp/WEB-INF/spring/root-context.xml")
@@ -21,15 +25,21 @@ public class MapperTest {
 
     @Test
     public void testInsert() {
-        RequestVO requestVO = new RequestVO();
+        RequestVO vo = new RequestVO();
+        vo.setNewbie(1);
+        vo.setRegDate(Timestamp.valueOf(LocalDateTime.now()));
+        vo.setSub("[\"테스트\", \"제이슨\", \"트발\"]");
+//        vo.setSub("test");
 
-        requestVO.setReq_newbie("1");
-        requestVO.setReq_regDate(LocalDateTime.now());
-        requestVO.setReq_sort("서비스 항목");
-        requestVO.setReq_type("상세 항목");
-        requestVO.setReq_ref("newbie");
+        int insert = requestMapper.insert(vo);
+        log.info("insert 개수 : " + insert);
 
-        log.info("COUNT : " + requestMapper.insert(requestVO)); // 몇개가 추가 되었나? -> 1
-        log.info("ID : " + requestVO.getReq_id());
+    }
+
+    @Test
+    public void select() {
+
+        RequestVO requestVO = requestMapper.selectById(14);
+        log.info(requestVO);
     }
 }

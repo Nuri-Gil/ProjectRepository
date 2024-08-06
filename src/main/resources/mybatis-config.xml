@@ -3,8 +3,9 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-    <!-- 아래에 지정한 패키지의 이름을 생략하기 위한 설정
-    EX. org.soomgo.soomgo_project.domain.RequestVO 대신 RequestVO 로 줄여서 쓸 수 있도록 -->
+    <!--<mappers>
+        <mapper class="mappers/requestMapper.xml"></mapper>
+    </mappers>-->
     <typeAliases>
         <package name="org.soomgo.soomgo_project.domain"/>
     </typeAliases>
