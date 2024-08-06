@@ -1,4 +1,4 @@
-package org.soomgo.soomgo_project.domain;
+package org.soomgo.soomgo_project.controller;
 
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Controller;
