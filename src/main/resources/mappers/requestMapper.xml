@@ -8,15 +8,20 @@
         <selectKey order="AFTER" keyProperty="id" resultType="int">
             SELECT LAST_INSERT_ID()
         </selectKey>
-        insert into test (writer, ref)
-        values (#{writer}, #{ref})
+        <!--insert into test (writer, ref)
+        values (#{writer}, #{ref})-->
+        insert into reqsend (writer, regDate, sort, type, sub, file1, file2, cr, amount, addService, result, day, time, age, sex, fav, place, date, region, ref)
+        values (#{writer}, #{regDate}, #{sort}, #{type}, #{sub}, #{file1}, #{file2}, #{cr}, #{amount}, #{addService}, #{result}, #{day}, #{time}, #{age},
+        #{sex}, #{fav}, #{place}, #{date}, #{region}, #{ref})
     </insert>
 
     <select id="select" resultType="RequestVO">
-        select * from test where id = #{id}
+<!--        select * from test where id = #{id}-->
+        select * from reqsend where id = #{id}
     </select>
 
     <select id="getList" resultType="RequestVO">
-        select * from test where id > 0 order by id desc
+<!--        select * from test where id > 0 order by id desc-->
+        select * from reqsend where id > 0 order by id desc
     </select>
 </mapper>

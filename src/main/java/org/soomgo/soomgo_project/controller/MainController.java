@@ -65,6 +65,8 @@ public class MainController {
         int id = requestService.register(requestVO);
         rttr.addFlashAttribute("result", id);
         // 몇번 견적서가 등록되었는지 -> result 라는 이름, id 번 견적서
+        rttr.addFlashAttribute("vo", requestVO);
+        log.info("registerVO : " + requestVO);
         return "redirect:/request/list";
     }
 /*

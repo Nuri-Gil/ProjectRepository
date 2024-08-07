@@ -31,7 +31,7 @@ public class MapperTest {
     @Test
     public void testInsert() {
         RequestVO vo = new RequestVO();
-        vo.setWriter(1);
+        vo.setWriter("1번 writer");
         vo.setRegDate(LocalDateTime.now());
 //        vo.setRef("[\"테스트\", \"제이슨\", \"트발\"]");
         vo.setRef("test");
