@@ -8,9 +8,7 @@ import java.time.LocalDateTime;
 @Data
 public class RequestVO {
     private int id;
-    private int newbie;
-    private Timestamp regDate;
-    private String sub;
-
-
+    private String writer;
+    private LocalDateTime regDate;
+    private String ref;
 }

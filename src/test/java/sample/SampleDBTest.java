@@ -21,7 +21,7 @@ public class SampleDBTest {
         log.info("RequestMapper: {}", requestMapper);
         log.info("===================================");
 
-        RequestVO requestVO = requestMapper.selectById(1);
+        RequestVO requestVO = requestMapper.select(1);
         log.info("===================================");
         log.info("RequestVO: {}", requestVO);
         log.info("===================================");

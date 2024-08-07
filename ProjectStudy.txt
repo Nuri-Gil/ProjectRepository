@@ -1,0 +1,14 @@
+RequestService 는 BEAN 등록이 되지 않을 수 있으므로
+root-context 에서 component 스캔 해줄것
+RequestService 에서 Transaction 처리 (여러개의 객체가 한가지의 작업을 하기 때문)
+컨트롤러와 영속(DB) 사이의 본드 역할
+고객의 요구사항
+
+-- 웹 계층 처리
+접근 순서
+    URI 설계 (엑셀로?)
+    Method 설계 (GET / POST)
+    Query String / Params (쿼리 스트링? -> 페이징 처리, @PathVariable?)
+    컨트롤러
+    Method
+    VIEW (jsp? Redirect?)

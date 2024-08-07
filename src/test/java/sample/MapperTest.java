@@ -24,22 +24,32 @@ public class MapperTest {
     RequestMapper requestMapper;
 
     @Test
+    public void testMapper() {
+        log.info(requestMapper);
+    }
+
+    @Test
     public void testInsert() {
         RequestVO vo = new RequestVO();
-        vo.setNewbie(1);
-        vo.setRegDate(Timestamp.valueOf(LocalDateTime.now()));
-        vo.setSub("[\"테스트\", \"제이슨\", \"트발\"]");
-//        vo.setSub("test");
+        vo.setWriter(1);
+        vo.setRegDate(LocalDateTime.now());
+//        vo.setRef("[\"테스트\", \"제이슨\", \"트발\"]");
+        vo.setRef("test");
 
         int insert = requestMapper.insert(vo);
         log.info("insert 개수 : " + insert);
+        log.info("id : " + vo.getId());
 
     }
 
     @Test
-    public void select() {
+    public void testSelect() {
+        int id = 8;
+        log.info(requestMapper.select(id));
+    }
 
-        RequestVO requestVO = requestMapper.selectById(14);
-        log.info(requestVO);
+    @Test
+    public void testList() {
+        requestMapper.getList().forEach(requestVO -> log.info(requestVO));
     }
 }
