@@ -15,136 +15,136 @@
 <h2>Request Details</h2>
 
 <table border="1">
-    <c:if test="${not empty vo.id}">
+    <c:if test="${not empty dto.id}">
         <tr>
             <th>ID</th>
-            <td>${vo.id}</td>
+            <td>${dto.id}</td>
         </tr>
     </c:if>
-    <c:if test="${not empty vo.writer}">
+    <c:if test="${not empty dto.writer}">
         <tr>
             <th>Writer</th>
-            <td>${vo.writer}</td>
+            <td>${dto.writer}</td>
         </tr>
     </c:if>
-    <c:if test="${not empty vo.regDate}">
+    <c:if test="${not empty dto.regDate}">
         <tr>
             <th>Registration Date</th>
-            <td>${vo.regDate}</td>
+            <td>${dto.regDate}</td>
         </tr>
     </c:if>
-    <c:if test="${not empty vo.sort}">
+    <c:if test="${not empty dto.sort}">
         <tr>
             <th>Sort</th>
-            <td>${vo.sort}</td>
+            <td>${dto.sort}</td>
         </tr>
     </c:if>
-    <c:if test="${not empty vo.type}">
+    <c:if test="${not empty dto.type}">
         <tr>
             <th>Type</th>
-            <td>${vo.type}</td>
+            <td>${dto.type}</td>
         </tr>
     </c:if>
-    <c:if test="${not empty vo.sub}">
+    <c:if test="${not empty dto.sub}">
         <tr>
             <th>Sub</th>
-            <td>${vo.sub}</td>
+            <td>${dto.sub}</td>
         </tr>
     </c:if>
-    <c:if test="${not empty vo.file1}">
+    <c:if test="${not empty dto.file1}">
         <tr>
             <th>File 1</th>
-            <td>${vo.file1}</td>
+            <td>${dto.file1}</td>
         </tr>
     </c:if>
-    <c:if test="${not empty vo.file2}">
+    <c:if test="${not empty dto.file2}">
         <tr>
             <th>File 2</th>
-            <td>${vo.file2}</td>
+            <td>${dto.file2}</td>
         </tr>
     </c:if>
-    <c:if test="${vo.cr != null}">
+    <c:if test="${dto.cr != null}">
         <tr>
             <th>Commercial Use</th>
-            <td>${vo.cr}</td>
+            <td>${dto.cr}</td>
         </tr>
     </c:if>
-    <c:if test="${not empty vo.amount}">
+    <c:if test="${not empty dto.amount}">
         <tr>
             <th>Amount</th>
-            <td>${vo.amount}</td>
+            <td>${dto.amount}</td>
         </tr>
     </c:if>
-    <c:if test="${not empty vo.addService}">
+    <c:if test="${not empty dto.addService}">
         <tr>
             <th>Additional Service</th>
-            <td>${vo.addService}</td>
+            <td>${dto.addService}</td>
         </tr>
     </c:if>
-    <c:if test="${not empty vo.delService}">
+    <c:if test="${not empty dto.delService}">
         <tr>
             <th>Delete Service</th>
-            <td>${vo.delService}</td>
+            <td>${dto.delService}</td>
         </tr>
     </c:if>
-    <c:if test="${not empty vo.result}">
+    <c:if test="${not empty dto.result}">
         <tr>
             <th>Result</th>
-            <td>${vo.result}</td>
+            <td>${dto.result}</td>
         </tr>
     </c:if>
-    <c:if test="${not empty vo.day}">
+    <c:if test="${not empty dto.day}">
         <tr>
             <th>Day</th>
-            <td>${vo.day}</td>
+            <td>${dto.day}</td>
         </tr>
     </c:if>
-    <c:if test="${not empty vo.time}">
+    <c:if test="${not empty dto.time}">
         <tr>
             <th>Time</th>
-            <td>${vo.time}</td>
+            <td>${dto.time}</td>
         </tr>
     </c:if>
-    <c:if test="${not empty vo.age}">
+    <c:if test="${not empty dto.age}">
         <tr>
             <th>Age</th>
-            <td>${vo.age}</td>
+            <td>${dto.age}</td>
         </tr>
     </c:if>
-    <c:if test="${not empty vo.sex}">
+    <c:if test="${not empty dto.sex}">
         <tr>
             <th>Sex</th>
-            <td>${vo.sex}</td>
+            <td>${dto.sex}</td>
         </tr>
     </c:if>
-    <c:if test="${not empty vo.fav}">
+    <c:if test="${not empty dto.fav}">
         <tr>
             <th>Favorite</th>
-            <td>${vo.fav}</td>
+            <td>${dto.fav}</td>
         </tr>
     </c:if>
-    <c:if test="${not empty vo.place}">
+    <c:if test="${not empty dto.place}">
         <tr>
             <th>Place</th>
-            <td>${vo.place}</td>
+            <td>${dto.place}</td>
         </tr>
     </c:if>
-    <c:if test="${not empty vo.date}">
+    <c:if test="${not empty dto.date}">
         <tr>
             <th>Date</th>
-            <td>${vo.date}</td>
+            <td>${dto.date}</td>
         </tr>
     </c:if>
-    <c:if test="${not empty vo.region}">
+    <c:if test="${not empty dto.region}">
         <tr>
             <th>Region</th>
-            <td>${vo.region}</td>
+            <td>${dto.region}</td>
         </tr>
     </c:if>
-    <c:if test="${not empty vo.ref}">
+    <c:if test="${not empty dto.ref}">
         <tr>
             <th>Reference</th>
-            <td>${vo.ref}</td>
+            <td>${dto.ref}</td>
         </tr>
     </c:if>
 </table>

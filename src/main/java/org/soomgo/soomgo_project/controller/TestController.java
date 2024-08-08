@@ -2,15 +2,11 @@ package org.soomgo.soomgo_project.controller;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
-import org.soomgo.soomgo_project.domain.RequestVO;
+import org.soomgo.soomgo_project.domain.RequestDTO;
 import org.soomgo.soomgo_project.service.RequestService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
-import java.util.Arrays;
-import java.util.List;
 
 @Controller
 @Log4j2
@@ -21,7 +17,7 @@ public class TestController {
 
     @GetMapping("/list")
     public void listAll(
-            @ModelAttribute("vo") RequestVO vo,
+            @ModelAttribute("dto") RequestDTO dto,
             Model model) {
         model.addAttribute("list", new String[]{"AA", "BB", "CC"});
     }
@@ -57,12 +53,12 @@ public class TestController {
 
     @PostMapping("/req")
     public String postReqPage(
-            @ModelAttribute RequestVO requestVO
+            @ModelAttribute RequestDTO requestDTO
     ) {
-        log.info(requestVO.toString());
-        requestService.register(requestVO);
+        log.info(requestDTO.toString());
+        requestService.register(requestDTO);
 //        rttr.addAttribute("date", date);
-        log.info("req_sub : " + requestVO.getReq_sub());
+        log.info("req_sub : " + requestDTO.getReq_sub());
         return "redirect:/soomgo/test";
     }
 
@@ -76,8 +72,8 @@ public class TestController {
     public void listAll(Model model) {
 
         log.info("listAll==================");
-        List<RequestVO> requestVOS = requestService.selectAll();
-        model.addAttribute("requestVOS", requestVOS);
+        List<RequestDTO> requestDTOS = requestService.selectAll();
+        model.addAttribute("requestDTOS", requestDTOS);
     }
 */
 }

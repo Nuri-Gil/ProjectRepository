@@ -47,3 +47,12 @@ CREATE TABLE reqsend
 #         #{sex}, #{fav}, #{place}, #{date}, #{region}, #{ref})
 
 select * from reqsend;
+
+
+-- 견적서 처리
+최소 db 만들고 테스트 하기
+견적서는
+고객 db -> 고객 고유번호, 지역
+고수 db -> 고수 고유번호, 지역, 분야
+각 유저의 지역 -> 견적서 region FK
+고수의 분야 -> 견적서 type FK

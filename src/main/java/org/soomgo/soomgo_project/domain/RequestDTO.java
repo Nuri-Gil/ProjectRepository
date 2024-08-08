@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 
 @Data
-public class RequestVO {
+public class RequestDTO {
     /*
         private int id;
         private String writer;
@@ -21,7 +21,7 @@ public class RequestVO {
     private String sub;
     private String file1;
     private String file2;
-    private boolean cr;
+    private Boolean cr; // Null 값 넣기 위해서 래퍼 클래스로 설정
     private String amount;
     private String addService;
     private String delService;
@@ -36,7 +36,7 @@ public class RequestVO {
     private String region;
     private String ref;
 
-    public RequestVO() {
+    public RequestDTO() {
         this.regDate = LocalDateTime.now().truncatedTo(ChronoUnit.SECONDS);
     }
 }

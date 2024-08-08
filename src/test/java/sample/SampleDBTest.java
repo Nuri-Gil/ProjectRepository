@@ -3,7 +3,7 @@ package sample;
 import lombok.extern.log4j.Log4j2;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.soomgo.soomgo_project.domain.RequestVO;
+import org.soomgo.soomgo_project.domain.RequestDTO;
 import org.soomgo.soomgo_project.mappers.RequestMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
@@ -21,9 +21,9 @@ public class SampleDBTest {
         log.info("RequestMapper: {}", requestMapper);
         log.info("===================================");
 
-        RequestVO requestVO = requestMapper.select(1);
+        RequestDTO requestDTO = requestMapper.select(1);
         log.info("===================================");
-        log.info("RequestVO: {}", requestVO);
+        log.info("RequestVO: {}", requestDTO);
         log.info("===================================");
     }
 }

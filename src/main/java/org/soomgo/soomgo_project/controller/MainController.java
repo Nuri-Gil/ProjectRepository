@@ -2,8 +2,7 @@ package org.soomgo.soomgo_project.controller;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
-import org.aspectj.asm.IModelFilter;
-import org.soomgo.soomgo_project.domain.RequestVO;
+import org.soomgo.soomgo_project.domain.RequestDTO;
 import org.soomgo.soomgo_project.service.RequestService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -29,7 +28,7 @@ public class MainController {
     ) {
         log.info("list==========");
 
-        List<RequestVO> list = requestService.list();
+        List<RequestDTO> list = requestService.list();
         log.info(list);
 
         model.addAttribute("list", list);
@@ -43,9 +42,9 @@ public class MainController {
             Model model
     ) {
         log.info("id : " + id);
-        RequestVO requestVO = requestService.get(id);
-        log.info(requestVO);
-        model.addAttribute("vo", requestVO);
+        RequestDTO requestDTO = requestService.get(id);
+        log.info(requestDTO);
+        model.addAttribute("dto", requestDTO);
         return "/request/read";
     }
 
@@ -58,15 +57,15 @@ public class MainController {
     @PostMapping("/register")
     // Redirection 용 String!!
     public String registerPost(
-            RequestVO requestVO,
+            RequestDTO requestDTO,
             RedirectAttributes rttr
     ) {
-        log.info("registerVO : " + requestVO);
-        int id = requestService.register(requestVO);
+        log.info("requestDTO : " + requestDTO);
+        int id = requestService.register(requestDTO);
         rttr.addFlashAttribute("result", id);
         // 몇번 견적서가 등록되었는지 -> result 라는 이름, id 번 견적서
-        rttr.addFlashAttribute("vo", requestVO);
-        log.info("registerVO : " + requestVO);
+        rttr.addFlashAttribute("dto", requestDTO);
+        log.info("requestDTO : " + requestDTO);
         return "redirect:/request/list";
     }
 /*
@@ -81,9 +80,9 @@ public class MainController {
         if(!(job.equals("read") || job.equals("modify))){
             throw new RuntimeException("Bad Request job");
         }
-        RequestVO requestVO = requestService.get(id);
-        log.info("requestVO : " + requestVO);
-        model.addAttribute("vo", requestVO);
+        RequestDTO requestDTO = requestService.get(id);
+        log.info("requestDTO : " + requestDTO);
+        model.addAttribute("dto", requestDTO);
         return "/request/read";
     }
 */

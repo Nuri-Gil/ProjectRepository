@@ -11,7 +11,7 @@
     <title>견적서</title>
 </head>
 <body>
-<h1>작성한 견적서</h1>
-${vo}
+<h1>받은 견적서</h1>
+${dto}
 </body>
 </html>

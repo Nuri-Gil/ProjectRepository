@@ -60,25 +60,25 @@
             <div>
                 <label>
                     <input type="checkbox" name="date" value="monday">
-                </label>월요일
+                    월요일</label>
                 <label>
                     <input type="checkbox" name="date" value="tuesday">
-                </label>화요일
+                    화요일</label>
                 <label>
                     <input type="checkbox" name="date" value="wednesday">
-                </label>수요일
+                    수요일</label>
                 <label>
                     <input type="checkbox" name="date" value="thursday">
-                </label>목요일
+                    목요일</label>
                 <label>
                     <input type="checkbox" name="date" value="friday">
-                </label>금요일
+                    금요일</label>
                 <label>
                     <input type="checkbox" name="date" value="saturday">
-                </label>토요일
+                    토요일</label>
                 <label>
                     <input type="checkbox" name="date" value="sunday">
-                </label>일요일
+                    일요일</label>
             </div>
         </div>
         <div>
@@ -86,15 +86,25 @@
             <div>
                 <label>
                     <input type="checkbox" name="time" value="morning">
-                </label>오전
+                    오전</label>
                 <label>
                     <input type="checkbox" name="time" value="afternoon">
-                </label>오후
+                    오후</label>
                 <label>
                     <input type="checkbox" name="time" value="evening">
-                </label>저녁
+                    저녁</label>
             </div>
             <input type="hidden" id="timeField" name="time" value="">
+        </div>
+        <div>
+            <label for="region" class="form-label mt-4">지역을 선택하세요</label>
+            <select name="region" class="form-select" id="region">
+                <option>서울</option>
+                <option>대전</option>
+                <option>광주</option>
+                <option>대구</option>
+                <option>부산</option>
+            </select>
         </div>
         <div>
             <label for="ref" class="form-label mt-4">기타 사항</label>
